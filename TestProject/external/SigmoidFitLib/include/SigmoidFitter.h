@@ -65,7 +65,7 @@ public:
   template <class... Args,
             std::enable_if_t<(... && std::is_same_v<Args, std::vector<double>>),
                              std::nullptr_t>  = nullptr>
-  const FitResult& Fit(const std::size_t iGap, const std::vector<double>& iPart,
+  FitResult Fit(const std::size_t iGap, const std::vector<double>& iPart,
                        const Args&... iParts)
   {
     std::vector resultSignal{iPart};
